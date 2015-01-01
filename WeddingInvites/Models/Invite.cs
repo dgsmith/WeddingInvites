@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 
 namespace WeddingInvites.Models
 {
@@ -10,7 +11,11 @@ namespace WeddingInvites.Models
 
         public string Address { get; set; }
         public string City { get; set; }
+
+        [StringLength(2), MinLength(2)]
         public string State { get; set; }
+
+        [StringLength(5), MinLength(5)]
         public string Zip { get; set; }
 
         // Bride or Grooms
@@ -25,11 +30,17 @@ namespace WeddingInvites.Models
         public int Invitees { get; set; }
 
         // Keeping track of sent/unsent
+        [Display(Name = "Invite Sent?")]
         public bool InviteSent { get; set; }
+
+        [Display(Name = "RSVP Recieved?")]
         public bool Confirmed { get; set; }
 
         // How many actually coming
-        public int Attending { get; set; }
+        [Display(Name = "Number Attending")]
+        public int? AttendingCount { get; set; }
+        
+        public string Notes { get; set; }
     }
 
     public class InviteDBContext : DbContext
