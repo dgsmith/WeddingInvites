@@ -1,0 +1,106 @@
+﻿@model WeddingInvites.Models.Invite
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Invite</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Zip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Party)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Party)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Invitees)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Invitees)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InviteSent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InviteSent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Confirmed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Confirmed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Attending)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Attending)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

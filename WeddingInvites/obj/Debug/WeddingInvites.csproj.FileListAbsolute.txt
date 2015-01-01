@@ -53,3 +53,5 @@ c:\users\grayson\documents\visual studio 2013\Projects\WeddingInvites\WeddingInv
 c:\users\grayson\documents\visual studio 2013\Projects\WeddingInvites\WeddingInvites\obj\Debug\WeddingInvites.csprojResolveAssemblyReference.cache
 c:\users\grayson\documents\visual studio 2013\Projects\WeddingInvites\WeddingInvites\obj\Debug\WeddingInvites.dll
 c:\users\grayson\documents\visual studio 2013\Projects\WeddingInvites\WeddingInvites\obj\Debug\WeddingInvites.pdb
+C:\Users\grayson\Documents\Visual Studio 2013\Projects\WeddingInvites\WeddingInvites\obj\Debug\WeddingInvites.Migrations.Initial.resources
+C:\Users\grayson\Documents\Visual Studio 2013\Projects\WeddingInvites\WeddingInvites\obj\Debug\WeddingInvites.csproj.GenerateResource.Cache
