@@ -7,6 +7,7 @@ namespace WeddingInvites.Models
     {
         public int ID { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
         public string Address { get; set; }
@@ -19,15 +20,17 @@ namespace WeddingInvites.Models
         public string Zip { get; set; }
 
         // Bride or Grooms
+        [Required]
         public string Party { get; set; }
 
         // enum for this?
         // type of invitee: 
         // guest, groomsmen, bridesmaid, etc.
+        [Required]
         public string Type { get; set; }
 
         // How many invitees are invited
-        public int Invitees { get; set; }
+        public int? Invitees { get; set; }
 
         // Keeping track of sent/unsent
         [Display(Name = "Invite Sent?")]
@@ -36,8 +39,8 @@ namespace WeddingInvites.Models
         [Display(Name = "RSVP Recieved?")]
         public bool Confirmed { get; set; }
 
-        // How many actually coming
-        [Display(Name = "Number Attending")]
+        // How many people invited are actually coming
+        [Display(Name = "Confirmed Attending")]
         public int? AttendingCount { get; set; }
         
         public string Notes { get; set; }

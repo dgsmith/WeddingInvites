@@ -15,14 +15,28 @@ namespace WeddingInvites.Controllers
         private InviteDBContext db = new InviteDBContext();
 
         // GET: Invites
-        public ActionResult Index(string searchString)
+        public ActionResult Index(string party, string searchString)
         {
+            var PartyList = new List<string>();
+
+            var PartyQry = from d in db.Invites
+                           orderby d.Party
+                           select d.Party;
+
+            PartyList.AddRange(PartyQry.Distinct());
+            ViewBag.party = new SelectList(PartyList);
+            
             var invites = from i in db.Invites
                           select i;
 
             if (!String.IsNullOrEmpty(searchString))
             {
                 invites = invites.Where(s => s.Name.Contains(searchString));
+            }
+
+            if (!string.IsNullOrEmpty(party))
+            {
+                invites = invites.Where(x => x.Party == party);
             }
 
             return View(invites);
@@ -54,7 +68,7 @@ namespace WeddingInvites.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Address,City,State,Zip,Party,Type,Invites,InviteSent,Confirmed,Attending")] Invite invite)
+        public ActionResult Create([Bind(Include = "ID,Name,Address,City,State,Zip,Party,Type,Invitees,InviteSent,Confirmed,AttendingCount,Notes")] Invite invite)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +100,7 @@ namespace WeddingInvites.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,Address,City,State,Zip,Party,Type,Invites,InviteSent,Confirmed,Attending")] Invite invite)
+        public ActionResult Edit([Bind(Include = "ID,Name,Address,City,State,Zip,Party,Type,Invitees,InviteSent,Confirmed,AttendingCount,Notes")] Invite invite)
         {
             if (ModelState.IsValid)
             {
