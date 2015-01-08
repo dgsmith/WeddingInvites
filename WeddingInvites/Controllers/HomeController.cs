@@ -15,14 +15,14 @@ namespace WeddingInvites.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Wedding invites description page.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Wedding invites contact page.";
 
             return View();
         }
