@@ -60,7 +60,20 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Party, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Party, new { htmlAttributes = new { @class = "form-control" } })
+                @{
+                    List<SelectListItem> partySelections = new List<SelectListItem>();
+                    partySelections.Add(new SelectListItem
+                        {
+                            Text = "Bride",
+                            Value = "Bride"
+                        });
+                    partySelections.Add(new SelectListItem
+                        {
+                            Text = "Groom",
+                            Value = "Groom"
+                        });
+                }
+                @Html.DropDownListFor(model => model.Party, partySelections, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Party, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -68,7 +81,25 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Type, new { htmlAttributes = new { @class = "form-control" } })
+                @{
+                    List<SelectListItem> typeSelections = new List<SelectListItem>();
+                    typeSelections.Add(new SelectListItem
+                        {
+                            Text = "Guest",
+                            Value = "Guest"
+                        });
+                    typeSelections.Add(new SelectListItem
+                        {
+                            Text = "Bridesmaid",
+                            Value = "Bridesmaid"
+                        });
+                    typeSelections.Add(new SelectListItem
+                    {
+                        Text = "Groomsmen",
+                        Value = "Groomsmen"
+                    });
+                }
+                @Html.DropDownListFor(model => model.Type, typeSelections, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
             </div>
         </div>
