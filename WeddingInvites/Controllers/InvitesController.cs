@@ -157,5 +157,27 @@ namespace WeddingInvites.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public void ExportToCSV()
+        {
+            System.IO.StringWriter sw = new System.IO.StringWriter();
+
+            sw.WriteLine("\"Name\",\"Party\",\"Type\",\"Invitees\"");
+            Response.ClearContent();
+            Response.AddHeader("content-disposition", "attachment;filename=Exported_Users.csv");
+            Response.ContentType = "text/csv";
+
+            foreach (var inviteRow in db.Invites)
+            {
+                sw.WriteLine(string.Format("\"{0}\",\"{1}\",\"{2}\",\"{3}\"",
+                                           inviteRow.Name,
+                                           inviteRow.Party,
+                                           inviteRow.Type,
+                                           inviteRow.Invitees));
+            }
+
+            Response.Write(sw.ToString());
+            Response.End();
+        }
     }
 }
