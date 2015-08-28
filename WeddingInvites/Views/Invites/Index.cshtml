@@ -54,7 +54,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Notes)
             </th>
-            <th><br /></th>
+            <th></th>
         </tr>
     </thead>
 
@@ -91,7 +91,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Notes)
             </td>
-            <td>
+            <td width="87">
                 @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
                 <!--@Html.ActionLink("Details", "Details", new { id=item.ID }) |-->
                 @Html.ActionLink("Delete", "Delete", new { id=item.ID })
