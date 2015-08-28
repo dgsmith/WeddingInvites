@@ -36,11 +36,11 @@ namespace WeddingInvites.Models
         [Display(Name = "Invite Sent?")]
         public bool InviteSent { get; set; }
 
-        [Display(Name = "RSVP Recieved?")]
+        [Display(Name = "Attending?")]
         public bool Confirmed { get; set; }
 
         // How many people invited are actually coming
-        [Display(Name = "Confirmed Attending")]
+        [Display(Name = "Number Attending")]
         public int? AttendingCount { get; set; }
         
         public string Notes { get; set; }
