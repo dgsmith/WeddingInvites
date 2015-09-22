@@ -30,16 +30,22 @@ namespace WeddingInvites.Controllers
                           select i;
             var inviteCount = 0;
             var headCount = 0;
+            var attendingCount = 0;
             foreach (var invite_row in invites) {
                 inviteCount++;
                 if (invite_row.Invitees.HasValue)
                 {
                     headCount += (int)invite_row.Invitees;
                 }
+                if (invite_row.AttendingCount.HasValue)
+                {
+                    attendingCount += (int)invite_row.AttendingCount;
+                }
             }
 
             ViewBag.inviteCount = inviteCount;
             ViewBag.headCount = headCount;
+            ViewBag.attendingCount = attendingCount;
 
             if (!String.IsNullOrEmpty(searchString))
             {
